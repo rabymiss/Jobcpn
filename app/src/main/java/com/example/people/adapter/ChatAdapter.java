@@ -46,7 +46,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull ChatAdapter.MyViewHolder holder, int position) {
         ResumeEntity resumeEntity=list.get(position);
         holder.textViewPeople.setText(resumeEntity.getYouname());
-       holder.textViewContent.setText(resumeEntity.getQwer());
+        holder.textViewContent.setText(resumeEntity.getQwer());
 
 
     }

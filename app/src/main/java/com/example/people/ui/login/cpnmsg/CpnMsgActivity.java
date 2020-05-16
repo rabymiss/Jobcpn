@@ -57,9 +57,10 @@ public class CpnMsgActivity extends AppCompatActivity {
     private ImageView imageViewIcon;
     private Button confirm;
     private ImgViewmodel imgViewmodel;
-    private UserViewModel userViewmodel;
+
     private CpnViewModel cpnViewModel;
     List<String>listall=new ArrayList<>();
+    private UserViewModel userViewmodel;
     LiveData<List<LoginUser>>liveData;
     CpnMessage cpnMessage=new CpnMessage();
     private static final String TEMP_INFO = "temp_info";
