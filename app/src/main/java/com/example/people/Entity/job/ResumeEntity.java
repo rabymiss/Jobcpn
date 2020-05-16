@@ -7,23 +7,8 @@ import androidx.room.PrimaryKey;
 @Entity
 public class ResumeEntity {
 
-    @Override
-    public String toString() {
-        return "ResumeEntity{" +
-                "id=" + id +
-                ", addressWork='" + addressWork + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", email='" + email + '\'' +
-                ", ifMary='" + ifMary + '\'' +
-                ", phone='" + phone + '\'' +
-                ", politics='" + politics + '\'' +
-                ", qwer='" + qwer + '\'' +
-                ", showbyshelf='" + showbyshelf + '\'' +
-                ", teached='" + teached + '\'' +
-                ", workming='" + workming + '\'' +
-                ", youname='" + youname + '\'' +
-                '}';
-    }
+
+
     @PrimaryKey(autoGenerate = true)
     private int id;
 

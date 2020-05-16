@@ -1,5 +1,6 @@
 package com.example.people.Api;
 
+import com.example.people.Api.entity.Resume;
 import com.example.people.Entity.cpn.CpnMessage;
 import com.example.people.Entity.cpn.ImguEntity;
 import com.example.people.Entity.job.JobMessage;
@@ -59,9 +60,11 @@ public interface Api {
     Call<RegisterEntity>loadcook(@Part MultipartBody.Part part, @PartMap Map<String,String> params);
     @POST("user/update")
     Call<RegisterEntity>updateuserr(@Body RequestBody requestBody);
-    //忘记密码
-    @POST("user/login/forget")
-    Call<RegisterEntity> loginphfor(@Body RequestBody requestBody);
+        //忘记密码
+        @POST("user/login/forget")
+        Call<RegisterEntity> loginphfor(@Body RequestBody requestBody);
     @POST("user/login/for")
     Call<RegisterEntity> LoginResultfor(@Body RequestBody requestBody);
+    @POST("find/mesume/byid")
+    Call<Resume> findresunme(@Body RequestBody requestBody);
 }
