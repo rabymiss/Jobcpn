@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">企业</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">账号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">确认</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="register_text">确认密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="title_activity_buttom">Buttom2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    //navigation br item
+    <string name="find_job">招聘</string>
+    <string name="message">消息</string>
+    <string name="my">我的</string>
+    <string name="refresh_job">刷新</string>
+
+    //Button
+    <string name="refresh_job_btn">更多</string>
+
+    //工作展示
+
+    //我的页面
+    <string name="username_my">我的</string>
+    <string name="edit_message_my">修改个人信心</string>a
+    <string name="collect_my">收藏</string>
+    <string name="please_my">邀约</string>
+    <string name="see_my">面试</string>
+
+    //工作详细界面
+
+    <string name="warming_msg">收取培训费，贷款培训，或在录用过程中需要支付体验费，押金等都属于违法行为。请提高警惕，谨防上当受骗!</string>
+
+
+    //hit my_message_all 添加详细信息
+
+    <string name="hit_my_add_job_name">职位</string>
+    <string name="condition_one">要求1</string>
+    <string name="condition_two">要求2</string>
+    <string name="condition_three">要求3</string>
+    <string name="good1">福利</string>
+    <string name="good2">福利</string>
+    <string name="good3">福利</string>
+    <string name="job_pay">工资</string>
+    <string name="work_content">工作内容</string>
+    <string name="work_content_show">工作描述</string>
+    <string name="word_address">工作地址</string>
+    <string name="cpn_img">图片</string>
+    <string name="cpn_name">公司名字</string>
+    <string name="dizhi">地址</string>
+
+
+    //chat car hit
+    <string name="newmessagemost">最新消息</string>
+
+    //简历
+    <string name="res_hit">编辑企业信息</string>
+    <string name="res_name">企业名称</string>
+    <string name="res_burth">地址</string>
+    <string name="res_telphone">手机号码</string>
+    <string name="res_e_mial">电子邮件</string>
+    <string name="res_address">所在地</string>
+    <string name="res_if_mary">婚姻状态</string>
+    <string name="res_politics">政治面貌</string>
+    <string name="res_bnt_confirm">发送录取通知</string>
+
+
+    //个人信息
+
+    <string name="res_person_message">个人简介</string>
+    <string name="person_confirm">提交</string>
+    <string name="person_icon">点击编辑头像</string>
+    <string name="person_xinxi">我的信息</string>
+    <string name="person_qiute">退出登录</string>
+    <string name="person_edit">编辑</string>
+
+    <string name="psw_edit_psw">修改密码</string>
+    <string name="psw_old_psw">旧密码</string>
+    <string name="psw_new_psw">新密码</string>
+    <string name="psw_confirm_psw">确认密码</string>
+    <string name="psw_confirm">提交</string>
+
+    //企业信息
+    <string name="cpn_namec">公司名称</string>
+    <string name="cpn_address">地址</string>
+    <string name="cpn_email">电子邮件</string>
+    <string name="cpn_message">详细信息</string>
+    <string name="cpn_phone">电话号码</string>
+    <string name="API">http:/172.20.10.3:8080/</string>
+
+
+    //验证码
+    <string name="msg_code">验证码获取</string>
+
+</resources>
