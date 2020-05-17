@@ -63,7 +63,7 @@ private DataInputStream in;
 private ChatAdapter.MyViewHolder myViewHolder;
 private ResumeViewModel resumeViewModel;
 private  ChatService chatService;
-    private LiveData<List<ResumeEntity>> filerRes;
+    private LiveData< List<ResumeEntity>> filerRes;
     private   List<ResumeEntity> allmsg=new ArrayList<>();
     private boolean isServiceBinded;
     private ICommunication iCommunication;
@@ -124,6 +124,8 @@ adapter();
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                resumeViewModel.deleteall();
+                chatAdapter.notifyDataSetChanged();
                 RegisterEntity registerEntity=new RegisterEntity(username1,null);
                 String msg=JSON.toJSONString(registerEntity);
                 final RequestBody requestBody3=RequestBody.create(MediaType.parse("application/json; charset=utf-8"),msg);
@@ -133,6 +135,7 @@ adapter();
                    public void onResponse(Call<Resume> call, Response<Resume> response) {
                        Resume resume=response.body();
                        List<Resume.DataBean>data=new ArrayList<>();
+                       data.clear();
                        data.addAll(resume.getData());
 
                        for (Resume.DataBean dataBean:data){
@@ -150,7 +153,10 @@ adapter();
                         resumeEntity1.setYouname(dataBean.getYouname());
                         resumeViewModel.insertRess(resumeEntity1);
 
+//                        chatAdapter.setData(resumeEntity1);
+
                        }
+
                        refreshLayout.setRefreshing(false);
                    }
 
@@ -161,6 +167,7 @@ adapter();
                });
 
                 refreshLayout.setRefreshing(false);
+
             }
         });
 
@@ -169,105 +176,25 @@ adapter();
     }
 
     private void adapter1() {
+
         recyclerView=requireActivity().findViewById(R.id.chat_recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
         chatAdapter=new ChatAdapter();
         resumeViewModel= ViewModelProviders.of(requireActivity()).get(ResumeViewModel.class);
-          filerRes=resumeViewModel.getAllResLive();
-           Log.d("all", String.valueOf(filerRes));
-        filerRes.observe(requireActivity(), new Observer<List<ResumeEntity>>() {
+        filerRes=resumeViewModel.getAllResLive();
+        filerRes.observe(this, new Observer<List<ResumeEntity>>() {
             @Override
             public void onChanged(List<ResumeEntity> resumeEntities) {
 
                 chatAdapter.setMessage(resumeEntities);
-              chatAdapter.notifyDataSetChanged();
+                chatAdapter.notifyDataSetChanged();
             }
         });
 
-recyclerView.setAdapter(chatAdapter);
+        recyclerView.setAdapter(chatAdapter);
 
     }
 
-//    private void broadcast() {
-//
-//
-//
-//
-//
-//        LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(getActivity());
-//        IntentFilter intentFilter = new IntentFilter();
-//        intentFilter.addAction("android.intent.action.ACTION_FASONG");//建议把它写一个公共的变量，这里方便阅读就不写了
-//        BroadcastReceiver Receive =new BroadcastReceiver() {
-//
-//            @Override
-//            public void onReceive(Context context, Intent intent) {
-//                String msg=intent.getStringExtra("msg");
-//
-//                ReturnResume returnResume= JSON.parseObject(msg,ReturnResume.class);
-//                        ReturnResume.DataBean dataBean=returnResume.getData();
-//                        ResumeEntity resumeEntity1=new ResumeEntity();
-//                        resumeEntity1.setEmail(dataBean.getEmail());
-//                        resumeEntity1.setAddressWork(dataBean.getAddressWork());
-//                        resumeEntity1.setBirthday(dataBean.getBirthday());
-//                        resumeEntity1.setIfMary(dataBean.getIfMary());
-//                        resumeEntity1.setPhone(dataBean.getPhone());
-//                        resumeEntity1.setQwer(dataBean.getQwer());
-//                        resumeEntity1.setPolitics(dataBean.getPolitics());
-//                        resumeEntity1.setTeached(dataBean.getTeached());
-//                        resumeEntity1.setShowbyshelf(dataBean.getShowbyshelf());
-//                        resumeEntity1.setWorkming(dataBean.getWorkming());
-//                        resumeEntity1.setYouname(dataBean.getYouname());
-//                        resumeViewModel.insertRess(resumeEntity1);
-//
-//
-//
-//
-//
-//
-//            }
-//        };
-//        broadcastManager.registerReceiver(Receive, intentFilter);
-//
-//
-//
-//
-//
-//    }
-
-
-
-
-//    private void service() {
-//  Intent intent=new Intent(requireActivity(),ChatService.class);
-//        mIsServiceBind = requireActivity().bindService(intent,mConnection,BIND_AUTO_CREATE);
-//
-//
-//
-//
-//}
-//private  ServiceConnection mConnection=new ServiceConnection() {
-//    @Override
-//    public void onServiceConnected(ComponentName name, IBinder service) {
-//        Log.d(TAG,"连接");
-//           iCommunication = (ICommunication) service;
-//
-//    }
-//
-//    @Override
-//    public void onServiceDisconnected(ComponentName name) {
-//        Log.d(TAG,"断开");
-//        iCommunication=null;
-//    }
-//};
-
-
-//    //分割线
-//    private void init() {
-//
-//
-//
-//
-//    }
 
 
 }

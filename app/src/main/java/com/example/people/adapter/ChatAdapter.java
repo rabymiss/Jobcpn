@@ -18,8 +18,10 @@ import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> {
     private List<ResumeEntity>list=new ArrayList<>();
+
     public void setMessage(List<ResumeEntity> list) {
-        this.list = list;
+
+           this.list = list;
     }
     @NonNull
     @Override
@@ -57,6 +59,12 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
             return list.size();
 
         }
+
+    public void setData(ResumeEntity resumeEntity) {
+
+        list.add(resumeEntity);
+        notifyDataSetChanged();
+    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewPeople,textViewContent;

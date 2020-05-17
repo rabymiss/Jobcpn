@@ -64,7 +64,7 @@ public class ReceiveResumeActivity extends AppCompatActivity {
 
 
               for (ResumeEntity resumeEntity1:resumeEntities){
-//                  Log.d(TAG,"我看见你了" +  resumeEntities);
+
           edName.setText(resumeEntity1.getYouname());
             edBurth.setText(resumeEntity1.getBirthday());
             edpolitics.setText(resumeEntity1.getPolitics());

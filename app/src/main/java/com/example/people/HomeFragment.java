@@ -183,7 +183,7 @@ task.enqueue(new Callback<JobMessage>() {
         refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                jobMessageList.clear();
+
                 jobViewModel.deleteAllJobs();
                 cnpAdapter.notifyDataSetChanged();
 //加载招聘信息
@@ -203,7 +203,7 @@ task.enqueue(new Callback<JobMessage>() {
                         if (response.code()== HttpsURLConnection.HTTP_OK){
 
                             JobResultEntity jobResultEntity=response.body();
-
+                        data2.clear();
                             data2.addAll(jobResultEntity.getData());
 
 
@@ -217,7 +217,7 @@ task.enqueue(new Callback<JobMessage>() {
 
 
                                 jobViewModel.insertJobs(jobMessage);
-                                cnpAdapter.notifyDataSetChanged();
+
                             }
 
 

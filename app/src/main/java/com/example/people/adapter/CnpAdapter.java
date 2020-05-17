@@ -55,7 +55,7 @@ public class CnpAdapter extends RecyclerView.Adapter<CnpAdapter.MyViewHolder> {
                 intent.putExtra("con1",holder.textViewConditionOne.getText().toString());
                 intent.putExtra("con2",holder.textViewConditionTwo.getText().toString());
                     intent.putExtra("uuid",holder.textViewDate.getText().toString());
-intent.putExtra("image",holder.img.getText().toString());
+                intent.putExtra("image",holder.img.getText().toString());
               holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ intent.putExtra("image",holder.img.getText().toString());
         holder.textViewDate.setText(jobMessage.getUuid());
         holder.img.setText(jobMessage.getImage());
         Picasso.get().load(ApiRetrofit.URL +jobMessage.getImage()).into(holder.imageView);
-        System.out.println("cpnadapter"+"=============="+jobMessage.getImage());
+
 
 
     }

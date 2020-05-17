@@ -21,11 +21,13 @@ public class ResumeViewModel extends AndroidViewModel {
         super(application);
         resumeReposiry =new ResumeReposiry(application);
     }
-
+public void deleteall(){
+        resumeReposiry.deleteall();
+}
     public LiveData<List<ResumeEntity>> findMsgsWithPattern(String patten) {
         return resumeReposiry.findResumeWithPattern(patten);
     }
-   public LiveData<List<ResumeEntity>> getAllResLive() { return resumeReposiry.getAllResLive();}
+   public LiveData<List<ResumeEntity>>getAllResLive() { return resumeReposiry.getAllResLive();}
     public   void insertRess(ResumeEntity... resumeEntities) {
         resumeReposiry.insertRess(resumeEntities);
     }

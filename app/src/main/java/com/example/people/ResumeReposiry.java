@@ -13,7 +13,7 @@ import java.util.List;
 public class ResumeReposiry {
 
 
-    private LiveData<List<ResumeEntity>> allResumesLive;
+    private   LiveData< List<ResumeEntity> >allResumesLive;
     private ReceiveResumeDao receiveResumeDao;
 
 
@@ -23,11 +23,15 @@ public class ResumeReposiry {
        allResumesLive=receiveResumeDao.getAllResLive();
     }
 
+
     LiveData<List<ResumeEntity>> findResumeWithPattern(String patten) {
         return receiveResumeDao.findResumeWithPattern(patten);
     }
-    LiveData<List<ResumeEntity>> getAllResLive() {
+   LiveData< List<ResumeEntity> >getAllResLive() {
         return  allResumesLive;
+    }
+    void deleteall(){
+        new ResumeReposiry.DeleteallAsyncTask(receiveResumeDao).execute();
     }
     void insertRess(ResumeEntity... resumeEntities) {
         new ResumeReposiry.InsertAsyncTask(receiveResumeDao).execute(resumeEntities);
@@ -42,6 +46,17 @@ public class ResumeReposiry {
         @Override
         protected Void doInBackground(ResumeEntity... resumeEntities) {
             receiveResumeDao.insertResume(resumeEntities);
+            return null;
+        }
+    }
+    static  class  DeleteallAsyncTask extends AsyncTask<Void,Void,Void>{
+private ReceiveResumeDao receiveResumeDao;
+DeleteallAsyncTask(ReceiveResumeDao receiveResumeDao){
+    this.receiveResumeDao=receiveResumeDao;
+}
+        @Override
+        protected Void doInBackground(Void... voids) {
+    receiveResumeDao.deleteall();
             return null;
         }
     }
