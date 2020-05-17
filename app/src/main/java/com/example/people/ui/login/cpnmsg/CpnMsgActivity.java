@@ -280,7 +280,7 @@ if (Validator.isEMAIN(edemail.getText().toString())){
                     @Override
                     public void onResponse(Call<CpnMessage> call, Response<CpnMessage> response) {
 
-                      System.out.println("插入-------------"+cpnViewModel.list());
+
 
                         Toast.makeText(getApplicationContext(), "保存成功", Toast.LENGTH_SHORT).show();
 

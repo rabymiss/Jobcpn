@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.people.Entity.cpn.CpnMessage;
-import com.example.people.ui.login.cpnmsg.CpnMsgActivity;
+
 
 import java.util.List;
 
