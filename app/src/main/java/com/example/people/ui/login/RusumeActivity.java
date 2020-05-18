@@ -70,7 +70,7 @@ private Button confirm;
 
         edshowyouself=findViewById(R.id.editText_show_youself);
 
-        confirm=findViewById(R.id.button_res_confirm);
+        confirm=findViewById(R.id.button_res_confirmof);
 
 
 

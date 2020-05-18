@@ -73,6 +73,15 @@ public class Resume {
         private String uuid;
         private String cpnid;
         private String t1;
+        private String img;
+
+        public String getImg() {
+            return img;
+        }
+
+        public void setImg(String img) {
+            this.img = img;
+        }
 
         public int getId() {
             return id;

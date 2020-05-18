@@ -41,6 +41,36 @@ public class ResumeEntity {
     private String workming;
     @ColumnInfo
     private String youname;
+    @ColumnInfo
+    private String uid;
+    @ColumnInfo
+    private String uuid;
+    @ColumnInfo
+    private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getAddressWork() {
         return addressWork;
@@ -145,6 +175,9 @@ public class ResumeEntity {
                 ", teached='" + teached + '\'' +
                 ", workming='" + workming + '\'' +
                 ", youname='" + youname + '\'' +
+                ", uid='" + uid + '\'' +
+                ", uuid='" + uuid + '\'' +
+                ", img='" + img + '\'' +
                 '}';
     }
 }

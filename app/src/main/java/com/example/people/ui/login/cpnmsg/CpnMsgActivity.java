@@ -7,35 +7,27 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.people.Api.Api;
 import com.example.people.Api.ApiRetrofit;
-import com.example.people.Entity.RegisterEntity;
 import com.example.people.Entity.cpn.CpnMessage;
 import com.example.people.Entity.cpn.ImguEntity;
-import com.example.people.Fragmen.ui.MyFragment;
 import com.example.people.R;
 import com.example.people.UserViewModel;
 import com.example.people.common.Common;
 import com.example.people.data.model.LoginUser;
-import com.example.people.img.ImagEntity;
 import com.example.people.img.PhotoActivity;
 import com.example.people.tableDo.CpnViewModel;
 import com.example.people.tableDo.ImgViewmodel;
 import com.example.people.tool.Validator;
-import com.example.people.ui.login.ButtomActivity;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -47,8 +39,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CpnMsgActivity extends AppCompatActivity {
     private static final String TAG ="PersonMessageActivity" ;
@@ -189,17 +179,17 @@ CpnMsgActivity.this.finish();
     }
 
     private void inoitView() {
-        edName = findViewById(R.id.edit_res_name);
-        edaddress = findViewById(R.id.edit_res_burth);
+        edName = findViewById(R.id.of_ed_cpnname);
+        edaddress = findViewById(R.id.of_ed_address);
 
-        edemail = findViewById(R.id.edit_res_e_mail);
-        edphone = findViewById(R.id.edit_res_telphone);
-
-
-        edshowyouself = findViewById(R.id.edit_show_you);
+        edemail = findViewById(R.id.of_ed_e_mail);
+        edphone = findViewById(R.id.of_ed_telphone);
 
 
-        confirm = findViewById(R.id.button_res_confirm);
+        edshowyouself = findViewById(R.id.of_text_show);
+
+
+        confirm = findViewById(R.id.button_res_confirmof);
         imageViewIcon=findViewById(R.id.imageView_pco);
 
 

@@ -7,13 +7,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.people.Entity.job.ResumeEntity;
 import com.example.people.R;
 import com.example.people.ResumeViewModel;
+import com.example.people.ui.login.cpnmsg.OffiActivity;
 
 import java.util.List;
 
@@ -22,8 +24,10 @@ public class ReceiveResumeActivity extends AppCompatActivity {
     private TextView edName, edBurth, edpolitics, edemail, edphone, edaddress, edmary;
     private TextView edqwer, deteached, edworkming, edshowyouself;
     private ResumeViewModel resumeViewModel;
-
+private Button button_res_confirm;
     private  LiveData<List<ResumeEntity> >cpnNameList;
+    private String people;
+    private String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,23 @@ public class ReceiveResumeActivity extends AppCompatActivity {
 
 
         initPeople();
+        sendof();
 
+    }
+
+    private void sendof(){
+        button_res_confirm=findViewById(R.id.button_res_confirmof);
+        button_res_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ReceiveResumeActivity.this, OffiActivity.class);
+                intent.putExtra("uuid",people);
+                intent.putExtra("userid",userid);
+
+                intent.putExtra("jobname",edworkming.getText().toString());
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -54,10 +74,12 @@ public class ReceiveResumeActivity extends AppCompatActivity {
 
         edshowyouself=findViewById(R.id.editText_show_youself1);
         Intent intent=getIntent();
-        String people=intent.getStringExtra("People");
-        Toast.makeText(getApplication(),people,Toast.LENGTH_SHORT).show();
+        people = intent.getStringExtra("uuid");
+        userid = intent.getStringExtra("phone");
+
+        Toast.makeText(getApplication(), people,Toast.LENGTH_SHORT).show();
       cpnNameList=resumeViewModel.findMsgsWithPattern(people);
-      Log.d(TAG,"搜索" +  String.valueOf(cpnNameList));
+
       cpnNameList.observe(this, new Observer<List<ResumeEntity>>() {
           @Override
           public void onChanged(List<ResumeEntity> resumeEntities) {

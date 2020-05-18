@@ -151,8 +151,11 @@ adapter();
                         resumeEntity1.setShowbyshelf(dataBean.getShowbyshelf());
                         resumeEntity1.setWorkming(dataBean.getWorkming());
                         resumeEntity1.setYouname(dataBean.getYouname());
+                        resumeEntity1.setUid(dataBean.getT1());
+                        resumeEntity1.setUuid(dataBean.getUuid());
+                        resumeEntity1.setImg(dataBean.getImg());
                         resumeViewModel.insertRess(resumeEntity1);
-
+                        System.out.println(resumeEntity1);
 //                        chatAdapter.setData(resumeEntity1);
 
                        }

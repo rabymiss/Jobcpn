@@ -67,4 +67,8 @@ public interface Api {
     Call<RegisterEntity> LoginResultfor(@Body RequestBody requestBody);
     @POST("find/mesume/byid")
     Call<Resume> findresunme(@Body RequestBody requestBody);
+
+    //简历。。。。。。。。。。。。。。。。。。。。。
+    @POST("save/offi")
+    Call<RegisterEntity>sendoffi(@Body RequestBody requestBody);
 }

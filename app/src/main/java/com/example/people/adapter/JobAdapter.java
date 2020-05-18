@@ -39,7 +39,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> {
 
     public void setData(JobResultEntity jobResultEntity) {
 
-        data.clear();
+//        data.clear();
         data.addAll(jobResultEntity.getData());
         notifyDataSetChanged();
 

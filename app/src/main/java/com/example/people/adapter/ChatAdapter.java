@@ -9,9 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.people.Api.Api;
+import com.example.people.Api.ApiRetrofit;
 import com.example.people.Entity.job.ResumeEntity;
 import com.example.people.R;
 import com.example.people.ui.login.job.ReceiveResumeActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +39,10 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
 
               String  People= holder.textViewPeople.getText().toString();
               Intent intent=new Intent(itemView.getContext(), ReceiveResumeActivity.class);;
-                intent.putExtra("People",People);
+              intent.putExtra("username",People);
+              intent.putExtra("phone",holder.phone.getText().toString());
+                intent.putExtra("uuid",holder.uuid.getText().toString());
+
                holder.itemView.getContext().startActivity(intent);
 
             }
@@ -49,6 +55,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
         ResumeEntity resumeEntity=list.get(position);
         holder.textViewPeople.setText(resumeEntity.getYouname());
         holder.textViewContent.setText(resumeEntity.getQwer());
+        holder.phone.setText(resumeEntity.getUid());
+        holder.uuid.setText(resumeEntity.getUuid());
+        Picasso.get().load(ApiRetrofit.URL+resumeEntity.getImg()).into(holder.imageView);
 
 
     }
@@ -67,7 +76,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView textViewPeople,textViewContent;
+        private TextView textViewPeople,textViewContent,phone,uuid,job;
         private ImageView imageView;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -75,7 +84,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MyViewHolder> 
             textViewContent=itemView.findViewById(R.id.textView_chat_content);
             textViewPeople=itemView.findViewById(R.id.textView_chat_people);
             imageView=itemView.findViewById(R.id.imageView_chat_image);
-
+           phone=itemView.findViewById(R.id.chat_te_pho1);
+           uuid=itemView.findViewById(R.id.chat_te_uuid);
+           job=itemView.findViewById(R.id.chat_te_vpn);
 
 
         }

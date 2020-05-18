@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ApiRetrofit {
 
-    public static String URL = "http://192.168.0.104:3030/";
+    public static String URL = "http://192.168.1.5:3030/";
     private static Object sLock = new Object();
     private static ApiRetrofit sApiRetrofit;
     private Retrofit mRetrofit;

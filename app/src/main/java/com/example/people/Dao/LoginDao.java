@@ -27,7 +27,7 @@ public interface LoginDao {
         void deleteAllUsers();
         @Query("SELECT * FROM LOGINUSER ORDER BY ID DESC")
                 //List<Word> getAllWords();
-        LiveData<List<LoginUser>> getAllUserLive();
+    LiveData<List<LoginUser>> getAllUserLive();
 
         @Query("SELECT * FROM LoginUser WHERE account  LIKE :pattern ORDER BY ID DESC")
         LiveData<List<LoginUser>>findUserWithPattern(String pattern);

@@ -19,6 +19,6 @@ public interface ReceiveResumeDao {
     @Query("SELECT * FROM ResumeEntity ORDER BY ID DESC")
         //List<Word> getAllWords();
    LiveData  < List<ResumeEntity> >getAllResLive();
-    @Query("SELECT * FROM ResumeEntity WHERE youname  LIKE :pattern ORDER BY ID DESC")
+    @Query("SELECT * FROM ResumeEntity WHERE uuid  LIKE :pattern ORDER BY ID DESC")
     LiveData<List<ResumeEntity>> findResumeWithPattern(String pattern);
 }

@@ -101,4 +101,11 @@
     //验证码
     <string name="msg_code">验证码获取</string>
 
+    <string name="of_send">面试通知</string>
+    <string name="of_people">联系人</string>
+    <string name="of_time">面试时间</string>
+    <string name="of_ofed">人才姓名</string>
+    <string name="of_see">确认</string>
+    <string name="of_xiangqin">详情</string>
+
 </resources>
